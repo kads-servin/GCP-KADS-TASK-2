@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-nginx
+  labels:
+    app: deployment-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-nginx
+  template:
+    metadata:
+      labels:
+        app: deployment-nginx
+    spec:
+      containers:
+      - name: deployment-nginx
+        image: nginx:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 1929
+        env:
+        - name: url
+          value: http://my-deployment-nginx.com
