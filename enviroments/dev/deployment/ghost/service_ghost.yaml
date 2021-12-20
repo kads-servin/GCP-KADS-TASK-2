@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: service-ghost
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: deployment-ghost
   ports:
