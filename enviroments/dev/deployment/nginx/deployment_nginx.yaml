@@ -19,7 +19,7 @@ spec:
         image: nginx:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 1929
+        - containerPort: 80
         env:
         - name: url
           value: http://my-deployment-nginx.com

@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: deployment-ghost
-        image: ghost:2.6-alpine
-        imagePullPolicy: Always
+        image: ghost:latest
         ports:
         - containerPort: 2368
         env:
