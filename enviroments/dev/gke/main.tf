@@ -39,20 +39,20 @@ module "gke" {
       image_type         = "COS"
       auto_repair        = true
       auto_upgrade       = true
-      service_account    = "tf-gke-gke-task-2-cfxu@rd-gcp-kads.iam.gserviceaccount.com"
+      service_account    = "creategkeclusters@rd-gcp-kads.iam.gserviceaccount.com"
       preemptible        = false
       initial_node_count = 2
 
     },
   ]
 
-  master_authorized_networks = [
+  /* master_authorized_networks = [
     {
       cidr_block   = "187.233.16.82/32"
       display_name = "internet"
     }
 
-  ]
+  ] */
 
   remove_default_node_pool = true
 
