@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo2-ghost
+  labels:
+    app: demo2-ghost
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo2-ghost
+  template:
+    metadata:
+      labels:
+        app: demo2-ghost
+    spec:
+      containers:
+      - name: demo2-ghost
+        image: ghost:2.6-alpine
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2368
+        env:
+        - name: url
+          value: http://my-demo2-ghost.com
