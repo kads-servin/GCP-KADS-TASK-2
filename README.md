@@ -115,10 +115,13 @@ Go to kubernetes Engine > services & Ingress > Ingress and now you should be abl
 <img width="689" alt="GKE1" src="https://user-images.githubusercontent.com/78040799/147002250-7a0609c2-6ac2-452b-a511-3d08c2ff5826.PNG">
 
 Now go to Frontends and click on the ip or in the url you should be able to see the following:
+
 For Ghost:
+
 <img width="760" alt="Ghost" src="https://user-images.githubusercontent.com/78040799/147002743-060b858b-8522-4a15-9c2f-ebde342fc5ae.PNG">
 
 For Nginx:
+
 <img width="611" alt="nginx" src="https://user-images.githubusercontent.com/78040799/147002786-458d5266-19c6-4b81-893b-a5a2d2309aac.PNG">
 
 ## Additional Comments
