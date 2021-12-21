@@ -21,9 +21,25 @@ It creates 2 deployments an Nginx with 3 replicas and a Ghost with 2 replicas us
 ## Requirements
 Before this module can be used on a project, you must ensure that the following pre-requisites are fulfilled:
 
- 1.-Terraform and kubectl are installed on the machine where Terraform is executed.
- 2.-The Service Account you execute the module with has the right permissions.
- 3.-The Compute Engine and Kubernetes Engine APIs are active on the project you will launch the cluster in.
+   1.-Terraform and kubectl are installed on the machine where Terraform is executed.
+
+   2.-The Service Account you execute the module with has the right permissions.
+      
+      roles/compute.viewer
+
+      roles/compute.securityAdmin 
+
+      roles/container.clusterAdmin
+
+      roles/container.developer
+
+      roles/iam.serviceAccountAdmin
+
+      roles/iam.serviceAccountUser
+
+      roles/resourcemanager.projectIamAdmin 
+
+   3.-The Compute Engine and Kubernetes Engine APIs are active on the project you will launch the cluster in.
 
 ## Executing Network and GKE
 
@@ -39,6 +55,13 @@ terraform plan
 
 # To apply the infrastructure build
 terraform apply
+```
+## Connect to GCP console
+
+to connect to your GKE cluster execute the below command
+```python
+
+gcloud container clusters get-credentials gke-cluster-name --zone zone-name
 ```
 
 ## Executing the Deployments
@@ -88,8 +111,18 @@ NAME                      CLASS    HOSTS                                        
 ingress-ghost-and-nginx   <none>   service-ghost.example.com,service-nginx.example.com   34.149.93.55     80      19h
 
 ```
+Go to kubernetes Engine > services & Ingress > Ingress and now you should be able to see the follow in gcp console:
+<img width="689" alt="GKE1" src="https://user-images.githubusercontent.com/78040799/147002250-7a0609c2-6ac2-452b-a511-3d08c2ff5826.PNG">
+
+Now go to Frontends and click on the ip or in the url you should be able to see the following:
+For Ghost:
+<img width="760" alt="Ghost" src="https://user-images.githubusercontent.com/78040799/147002743-060b858b-8522-4a15-9c2f-ebde342fc5ae.PNG">
+
+For Nginx:
+<img width="611" alt="nginx" src="https://user-images.githubusercontent.com/78040799/147002786-458d5266-19c6-4b81-893b-a5a2d2309aac.PNG">
+
 ## Additional Comments
-please be informed that for this purpose we comment the following line since the first time we create and authorize network using a public ip, but once you restart your device your public IP will change and this could affect the funcionality
+Please be informed that for this purpose we comment the following line since the first time we create and authorize network using a public ip, but once you restart your device your public IP will change and this could affect the funcionality
 
 
 ```python
@@ -105,5 +138,4 @@ master_authorized_networks = [
 |-------------------|
 |  Karen Dominguez  |
 
-![Task2](https://user-images.githubusercontent.com/78040799/146997843-7ce72bf7-a372-4186-b984-fea5b4f0cd43.png)
-
+<img width="863" alt="Task2" src="https://user-images.githubusercontent.com/78040799/147002823-8dea8d20-e457-4806-9684-db68bf47c7a8.png">
