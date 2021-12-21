@@ -88,4 +88,22 @@ NAME                      CLASS    HOSTS                                        
 ingress-ghost-and-nginx   <none>   service-ghost.example.com,service-nginx.example.com   34.149.93.55     80      19h
 
 ```
+## Additional Comments
+please be informed that for this purpose we comment the following line since the first time we create and authorize network using a public ip, but once you restart your device your public IP will change and this could affect the funcionality
+
+
+```python
+
+master_authorized_networks = [
+    {
+      cidr_block   = "187.233.16.82/32"
+      display_name = "internet"
+    }
+```
+# Authors
+|        Name       |
+|-------------------|
+|  Karen Dominguez  |
+
+![Task2](https://user-images.githubusercontent.com/78040799/146997843-7ce72bf7-a372-4186-b984-fea5b4f0cd43.png)
 
