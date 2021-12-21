@@ -86,19 +86,20 @@ kubectl apply -f ingress_ghost_and_nginx.yaml
 $ kubectl get ingress
 NAME                      CLASS    HOSTS                                                 ADDRESS          PORTS   AGE
 ingress-ghost-and-nginx   <none>   service-ghost.example.com,service-nginx.example.com   34.149.93.55     80      19h
-
 ```
+
 ## Additional Comments
 please be informed that for this purpose we comment the following line since the first time we create and authorize network using a public ip, but once you restart your device your public IP will change and this could affect the funcionality
 
+
 ```python
+
 master_authorized_networks = [
     {
       cidr_block   = "187.233.16.82/32"
       display_name = "internet"
     }
 ```
-
 # Authors
 |        Name       |
 |-------------------|
