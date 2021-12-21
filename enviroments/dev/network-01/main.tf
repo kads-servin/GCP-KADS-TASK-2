@@ -15,14 +15,14 @@ module "vpc" {
     ]
 
     secondary_ranges = {
-        subnet-01 = [
+        (var.subnet_name) = [
             {
                 range_name    = "subnet-01-secondary-01"
-                ip_cidr_range = "192.168.50.0/24"
+                ip_cidr_range = "192.168.0.0/22"
             },
             {
                 range_name    = "subnet-02-secondary-02"
-                ip_cidr_range = "192.168.60.0/24"
+                ip_cidr_range = "192.170.0.0/22"
             },
 
         ]

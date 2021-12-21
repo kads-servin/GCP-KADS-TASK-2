@@ -19,7 +19,7 @@ module "gke" {
   ip_range_pods              = "subnet-01-secondary-01"
   ip_range_services          = "subnet-02-secondary-02"
   create_service_account     = true
-  http_load_balancing        = false
+  http_load_balancing        = true
   horizontal_pod_autoscaling = false
   network_policy             = false
   enable_private_endpoint    = false
